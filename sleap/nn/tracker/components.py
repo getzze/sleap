@@ -82,6 +82,24 @@ def hungarian_matching(cost_matrix: np.ndarray) -> List[Tuple[int, int]]:
     """Wrapper for Hungarian matching algorithm in scipy."""
 
     row_ind, col_ind = linear_sum_assignment(cost_matrix)
+    
+    # If the minimum cost is infinite, the result is unreliable
+    # as other permutations also resulted in an infinite cost...
+    # Try again with setting the inf values to a finite high value
+    min_cost = cost_matrix[row_ind, col_ind].sum()
+    if np.isinf(min_cost):
+        finite_cost_values = cost_matrix[np.isfinite(cost_matrix)]
+        # TODO: handle the case where all values are infinite
+        min_cost = finite_cost_values.min(initial=0.0)
+        max_cost = finite_cost_values.max(initial=0.0)
+        max_shape = np.max(cost_matrix.shape)
+        # Define a saturation value based on the min-max values. Factor 10 is arbitrary
+        saturation_value = max_cost + 10*max_shape*(max_cost - min_cost)
+        finite_cost_matrix = cost_matrix.copy()
+        finite_cost_matrix[~finite_cost_matrix.isfinite] = saturation_value
+        # Run Hungarian matching algorithm with all finite cost values
+        row_ind, col_ind = linear_sum_assignment(cost_matrix)
+
     return list(zip(row_ind, col_ind))
 
 
