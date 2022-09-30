@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Model evaluation &#8212; SLEAP (v1.2.8)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="canonical" href="/develop/notebooks/Model_evaluation.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysis examples" href="Analysis_examples.html" />
+    <link rel="prev" title="Training and inference on your own data using Google Drive" href="Training_and_inference_using_Google_Drive.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SLEAP (v1.2.8)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Home
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/tutorial.html">
+   Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/new-project.html">
+     Creating a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/initial-labeling.html">
+     Initial Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/initial-training.html">
+     Training and Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/assisted-labeling.html">
+     Prediction-assisted labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/proofreading.html">
+     Tracking instances across frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis.html">
+     Export Data For Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../guides/index.html">
+   Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/gui.html">
+     GUI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/cli.html">
+     Command line interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/troubleshooting-workflows.html">
+     Troubleshooting workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/skeletons.html">
+     Skeleton design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/choosing-models.html">
+     Configuring models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/merging.html">
+     Importing predictions for labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/proofreading.html">
+     Tracking and proofreading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/colab.html">
+     Run training and inference on Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/custom-training.html">
+     Creating a custom training profile
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../guides/remote.html">
+     Running SLEAP remotely
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Notebooks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Training_and_inference_on_an_example_dataset.html">
+     Training and inference on an example dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Training_and_inference_using_Google_Drive.html">
+     Training and inference on your own data using Google Drive
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Model evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Analysis_examples.html">
+     Analysis examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data_structures.html">
+     Data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Post_inference_tracking.html">
+     Post-inference tracking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Interactive_and_resumable_training.html">
+     Interactive and resumable training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Interactive_and_realtime_inference.html">
+     Interactive and realtime inference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../api.html">
+   Developer API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/talmolab/sleap">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/talmolab/sleap/releases">
+   Releases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../help.html">
+   Help
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/talmolab/sleap"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/talmolab/sleap/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Model_evaluation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Model evaluation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><a href="https://colab.research.google.com/github/talmolab/sleap/blob/main/docs/notebooks/Model_evaluation.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="model-evaluation">
+<h1>Model evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">#</a></h1>
+<p>After you’ve trained several models, you may want to generate some accuracy metrics to compare between them. This notebook demonstrates how you’ll do that given a trained model.</p>
+<p>Let’s start by installing SLEAP and downloading the trained model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip uninstall -y opencv-python opencv-contrib-python &gt; /dev/null 2&gt;&amp;1
+!pip install sleap &gt; /dev/null 2&gt;&amp;1
+!apt install tree &gt; /dev/null 2&gt;&amp;1
+!wget https://storage.googleapis.com/sleap-data/reference/flies13/td_fast.210505_012601.centered_instance.n%3D1800.zip &gt; /dev/null 2&gt;&amp;1
+!unzip -o -d &quot;td_fast.210505_012601.centered_instance.n=1800&quot; &quot;td_fast.210505_012601.centered_instance.n=1800.zip&quot; &gt; /dev/null 2&gt;&amp;1
+</pre></div>
+</div>
+</div>
+</div>
+<p>A trained SLEAP model will be a folder containing files that specify metadata that is useful for evaluation and analysis. The exact set of files may depend on the configuration, but all models will come with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">metrics.train.npz</span></code>: Metrics for the training split.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metrics.val.npz</span></code>: Metrics for the validation split. This is what you’ll want to use most of the time since it wasn’t directly used for optimizing the model.</p></li>
+</ul>
+<p><strong>Note:</strong> A test split will also be evaluated if it was provided during training and saved to <code class="docutils literal notranslate"><span class="pre">metrics.test.npz</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!tree td_fast.210505_012601.centered_instance.n=1800
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>td_fast.210505_012601.centered_instance.n=1800
+├── best_model.h5
+├── initial_config.json
+├── labels_gt.test.slp
+├── labels_gt.train.slp
+├── labels_gt.val.slp
+├── labels_pr.test.slp
+├── labels_pr.train.slp
+├── labels_pr.val.slp
+├── labels_pr.with_centroid.test.slp
+├── metrics.test.npz
+├── metrics.train.npz
+├── metrics.val.npz
+├── metrics.with_centroid.test.npz
+├── model_info.json
+├── training_config.json
+└── training_log.csv
+
+0 directories, 16 files
+</pre></div>
+</div>
+</div>
+</div>
+<p>Additionally, the following files are included and may also be useful:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">best_model.h5</span></code>: The actual saved model and weights. This can be loaded with <code class="docutils literal notranslate"><span class="pre">tf.keras.model.load_model()</span></code> but it is recommended to use <code class="docutils literal notranslate"><span class="pre">sleap.load_model()</span></code> instead as it takes care of adding some additional inference-only procedures.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">training_config.json</span></code>: The configuration for the model training job, including metadata inferred during the training procedure. It can be loaded with <code class="docutils literal notranslate"><span class="pre">sleap.load_config()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">labels_gt.train.slp</span></code> and <code class="docutils literal notranslate"><span class="pre">labels_pr.train.slp</span></code>: These are SLEAP labels files containing the ground truth and predicted points for the training split. They do not contain the images, but can be used to retrieve the poses used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">labels_gt.train.slp</span></code> and <code class="docutils literal notranslate"><span class="pre">labels_pr.train.slp</span></code>: These are SLEAP labels files containing the ground truth and predicted points for the validation split. They do not contain the images, but can be used to retrieve the poses used.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sleap</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">mpl</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn-deep&quot;</span><span class="p">)</span>
+<span class="n">sleap</span><span class="o">.</span><span class="n">versions</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SLEAP: 1.1.5
+TensorFlow: 2.3.1
+Numpy: 1.19.5
+Python: 3.7.11
+OS: Linux-5.4.104+-x86_64-with-Ubuntu-18.04-bionic
+</pre></div>
+</div>
+</div>
+</div>
+<p>SLEAP metrics can be loaded using the <code class="docutils literal notranslate"><span class="pre">sleap.load_metrics()</span></code> API:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sleap</span><span class="o">.</span><span class="n">load_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function load_metrics in module sleap.nn.evals:
+
+load_metrics(model_path: str, split: str = &#39;val&#39;) -&gt; typing.Dict[str, typing.Any]
+    Load metrics for a model.
+    
+    Args:
+        model_path: Path to a model folder or metrics file (.npz).
+        split: Name of the split to load the metrics for. Must be `&quot;train&quot;`, `&quot;val&quot;` or
+            `&quot;test&quot;` (default: `&quot;val&quot;`). Ignored if a path to a metrics NPZ file is
+            provided.
+    
+    Returns:
+        The loaded metrics as a dictionary with keys:
+    
+        - `&quot;vis.tp&quot;`: Visibility - True Positives
+        - `&quot;vis.fp&quot;`: Visibility - False Positives
+        - `&quot;vis.tn&quot;`: Visibility - True Negatives
+        - `&quot;vis.fn&quot;`: Visibility - False Negatives
+        - `&quot;vis.precision&quot;`: Visibility - Precision
+        - `&quot;vis.recall&quot;`: Visibility - Recall
+        - `&quot;dist.avg&quot;`: Average Distance (ground truth vs prediction)
+        - `&quot;dist.p50&quot;`: Distance for 50th percentile
+        - `&quot;dist.p75&quot;`: Distance for 75th percentile
+        - `&quot;dist.p90&quot;`: Distance for 90th percentile
+        - `&quot;dist.p95&quot;`: Distance for 95th percentile
+        - `&quot;dist.p99&quot;`: Distance for 99th percentile
+        - `&quot;dist.dists&quot;`: All distances
+        - `&quot;pck.mPCK&quot;`: Mean Percentage of Correct Keypoints (PCK)
+        - `&quot;oks.mOKS&quot;`: Mean Object Keypoint Similarity (OKS)
+        - `&quot;oks_voc.mAP&quot;`: VOC with OKS scores - mean Average Precision (mAP)
+        - `&quot;oks_voc.mAR&quot;`: VOC with OKS scores - mean Average Recall (mAR)
+        - `&quot;pck_voc.mAP&quot;`: VOC with PCK scores - mean Average Precision (mAP)
+        - `&quot;pck_voc.mAR&quot;`: VOC with PCK scores - mean Average Recall (mAR)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Loading the metrics for the validation split of the model we can see all of the available keys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="n">sleap</span><span class="o">.</span><span class="n">load_metrics</span><span class="p">(</span><span class="s2">&quot;td_fast.210505_012601.centered_instance.n=1800&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vis.tp
+vis.fp
+vis.tn
+vis.fn
+vis.precision
+vis.recall
+dist.dists
+dist.avg
+dist.p50
+dist.p75
+dist.p90
+dist.p95
+dist.p99
+pck.thresholds
+pck.pcks
+pck.mPCK_parts
+pck.mPCK
+oks.mOKS
+oks_voc.match_score_thresholds
+oks_voc.recall_thresholds
+oks_voc.match_scores
+oks_voc.precisions
+oks_voc.recalls
+oks_voc.AP
+oks_voc.AR
+oks_voc.mAP
+oks_voc.mAR
+pck_voc.match_score_thresholds
+pck_voc.recall_thresholds
+pck_voc.match_scores
+pck_voc.precisions
+pck_voc.recalls
+pck_voc.AP
+pck_voc.AR
+pck_voc.mAP
+pck_voc.mAR
+</pre></div>
+</div>
+</div>
+</div>
+<p>To start, let’s look at the summary of the <strong>localization errors</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (50%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p50&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (90%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p90&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (95%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p95&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error distance (50%): 0.9010142093245521
+Error distance (90%): 2.0545800141197903
+Error distance (95%): 3.0166608700891056
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are the percentiles of the distribution of how far off the model was from the ground truth location.</p>
+<p>We can visualize the entire distribution like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.dists&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">binrange</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;clip&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)},</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Localization error (px)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:numexpr.utils:NumExpr defaulting to 2 threads.
+</pre></div>
+</div>
+<img alt="../_images/Model_evaluation_14_1.png" src="../_images/Model_evaluation_14_1.png" />
+</div>
+</div>
+<p>This metric is intuitive, but it does not incorporate other sources of error like those stemming from poor instance detection and grouping, or missing points.</p>
+<p>The Object Keypoint Similarity (OKS) is a more holistic metric that takes factors such as landmark visibility, animal size, and the difficulty in locating keypoints (all are assumed to be “easy” for our calculations). You can read more about this and other pose estimation metrics in: <a class="reference external" href="https://arxiv.org/abs/1707.05388">https://arxiv.org/abs/1707.05388</a></p>
+<p>First let’s plot the distribution of OKS scores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.match_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">binrange</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;clip&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)},</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Object Keypoint Similarity&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Model_evaluation_16_0.png" src="../_images/Model_evaluation_16_0.png" />
+</div>
+</div>
+<p>Since these range from 0 to 1, it seems like we’re doing pretty well!</p>
+<p>Another way to summarize this is through precision-recall curves, which evaluate how well the model does at different thresholds of OKS scores. The higher the threshold, the more stringent our criteria for classifying a prediction as correct.</p>
+<p>Here we plot this at different thresholds:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">precision</span><span class="p">,</span> <span class="n">thresh</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.precisions&quot;</span><span class="p">][::</span><span class="mi">2</span><span class="p">],</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.match_score_thresholds&quot;</span><span class="p">][::</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.recall_thresholds&quot;</span><span class="p">],</span> <span class="n">precision</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;OKS @ </span><span class="si">{</span><span class="n">thresh</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Recall&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Precision&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower left&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Model_evaluation_18_0.png" src="../_images/Model_evaluation_18_0.png" />
+</div>
+</div>
+<p>An easy way to summarize this analysis is to take the average over all of these thresholds to compute the <strong>mean Average Precision (mAP)</strong> and <strong>mean Average Recall (mAR)</strong> which are widely used in the pose estimation literature.</p>
+<p>Here are those values saved out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mAP:&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.mAP&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mAR:&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.mAR&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mAP: 0.8150621709973537
+mAR: 0.8885
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great, but what if we have some new labels or want to evaluate the model with an updated set of labels for better comparisons with newer models?</p>
+<p>For this, we’ll need to generate new predictions.</p>
+<p>First, let’s download a new SLEAP labels package file (<code class="docutils literal notranslate"><span class="pre">.pkg.slp</span></code>). This is important since it denotes that the labels contain the images as well which we need for predicting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!wget https://storage.googleapis.com/sleap-data/datasets/wt_gold.13pt/tracking_split2/test.pkg.slp &gt; /dev/null 2&gt;&amp;1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we can simply load the model, the ground truth (GT) labels, and generate the predictions (~1 min on CPU):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predictor</span> <span class="o">=</span> <span class="n">sleap</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;td_fast.210505_012601.centered_instance.n=1800&quot;</span><span class="p">)</span>
+<span class="n">labels_gt</span> <span class="o">=</span> <span class="n">sleap</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s2">&quot;test.pkg.slp&quot;</span><span class="p">)</span>
+<span class="n">labels_pr</span> <span class="o">=</span> <span class="n">predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">labels_gt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Generating another set of metrics can then be calculated with the pair of GT and predicted labels:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="n">sleap</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">evals</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">labels_gt</span><span class="p">,</span> <span class="n">labels_pr</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (50%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p50&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (90%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p90&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error distance (95%):&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;dist.p95&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mAP:&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.mAP&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mAR:&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;oks_voc.mAR&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error distance (50%): 0.8984147543126978
+Error distance (90%): 2.197896466395166
+Error distance (95%): 3.148422807907632
+mAP: 0.797836431061851
+mAR: 0.8782499999999999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Training_and_inference_using_Google_Drive.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Training and inference on your own data using Google Drive</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Analysis_examples.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analysis examples</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By SLEAP Developers<br/>
+  
+      &copy; Copyright 2019–2022, Talmo Lab.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

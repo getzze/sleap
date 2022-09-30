@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installation &#8212; SLEAP (v1.2.8)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="canonical" href="/develop/installation.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorials/tutorial.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SLEAP (v1.2.8)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorials/tutorial.html">
+   Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/new-project.html">
+     Creating a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/initial-labeling.html">
+     Initial Labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/initial-training.html">
+     Training and Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/assisted-labeling.html">
+     Prediction-assisted labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/proofreading.html">
+     Tracking instances across frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/analysis.html">
+     Export Data For Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="guides/index.html">
+   Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/gui.html">
+     GUI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/cli.html">
+     Command line interfaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/troubleshooting-workflows.html">
+     Troubleshooting workflows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/skeletons.html">
+     Skeleton design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/choosing-models.html">
+     Configuring models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/merging.html">
+     Importing predictions for labeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/proofreading.html">
+     Tracking and proofreading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/colab.html">
+     Run training and inference on Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/custom-training.html">
+     Creating a custom training profile
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="guides/remote.html">
+     Running SLEAP remotely
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="notebooks/index.html">
+   Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Training_and_inference_on_an_example_dataset.html">
+     Training and inference on an example dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Training_and_inference_using_Google_Drive.html">
+     Training and inference on your own data using Google Drive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Model_evaluation.html">
+     Model evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Analysis_examples.html">
+     Analysis examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Data_structures.html">
+     Data structures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Post_inference_tracking.html">
+     Post-inference tracking
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Interactive_and_resumable_training.html">
+     Interactive and resumable training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/Interactive_and_realtime_inference.html">
+     Interactive and realtime inference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="api.html">
+   Developer API
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/talmolab/sleap">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/talmolab/sleap/releases">
+   Releases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="help.html">
+   Help
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/talmolab/sleap"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/talmolab/sleap/issues/new?title=Issue%20on%20page%20%2Finstallation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-miniconda">
+   Installing Miniconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-methods">
+   Installation methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-package">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-from-source">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+     from source
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pip-package">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m1-macs">
+     M1 Macs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-that-things-are-working">
+   Testing that things are working
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gui-support">
+     GUI support
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing">
+     Importing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gpu-support">
+     GPU support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgrading-and-uninstalling">
+   Upgrading and uninstalling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Installation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-miniconda">
+   Installing Miniconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-methods">
+   Installation methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-package">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-from-source">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+     from source
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pip-package">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m1-macs">
+     M1 Macs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-that-things-are-working">
+   Testing that things are working
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gui-support">
+     GUI support
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing">
+     Importing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gpu-support">
+     GPU support
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#upgrading-and-uninstalling">
+   Upgrading and uninstalling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<p>SLEAP can be installed as a Python package on Windows, Linux and Mac OS X. We currently provide <a class="reference internal" href="#m1mac"><span class="std std-ref">experimental support for M1 Macs</span></a>.</p>
+<p>SLEAP requires many complex dependencies, so we <strong>strongly</strong> recommend using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> to install it in its own isolated environment. See <a class="reference internal" href="#miniconda"><span class="std std-ref">Installing Miniconda</span></a> below for more instructions.</p>
+<p>The newest version of SLEAP can always be found in the <a class="reference external" href="https://github.com/talmolab/sleap/releases">Releases page</a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installing-miniconda" id="id1">Installing Miniconda</a></p></li>
+<li><p><a class="reference internal" href="#installation-methods" id="id2">Installation methods</a></p>
+<ul>
+<li><p><a class="reference internal" href="#conda-package" id="id3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> package</a></p></li>
+<li><p><a class="reference internal" href="#conda-from-source" id="id4"><code class="docutils literal notranslate"><span class="pre">conda</span></code> from source</a></p></li>
+<li><p><a class="reference internal" href="#pip-package" id="id5"><code class="docutils literal notranslate"><span class="pre">pip</span></code> package</a></p></li>
+<li><p><a class="reference internal" href="#m1-macs" id="id6">M1 Macs</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#testing-that-things-are-working" id="id7">Testing that things are working</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gui-support" id="id8">GUI support</a></p></li>
+<li><p><a class="reference internal" href="#importing" id="id9">Importing</a></p></li>
+<li><p><a class="reference internal" href="#gpu-support" id="id10">GPU support</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#upgrading-and-uninstalling" id="id11">Upgrading and uninstalling</a></p></li>
+<li><p><a class="reference internal" href="#getting-help" id="id12">Getting help</a></p></li>
+</ul>
+</div>
+<section id="installing-miniconda">
+<span id="miniconda"></span><h2><a class="toc-backref" href="#id1">Installing Miniconda</a><a class="headerlink" href="#installing-miniconda" title="Permalink to this headline">#</a></h2>
+<p><strong>Anaconda</strong> is a Python environment manager that makes it easy to install SLEAP and its necessary dependencies without affecting other Python software on your computer.</p>
+<p><strong>Miniconda</strong> is a lightweight version of Anaconda that we recommend. To install it:</p>
+<ol class="simple">
+<li><p>Go to: <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p></li>
+<li><p>Download the latest version for your OS.</p></li>
+<li><p>Follow the installer instructions.</p></li>
+</ol>
+<p><strong>On Windows</strong>, just click through the installation steps. We recommend using the following settings:</p>
+<ul class="simple">
+<li><p>Install for: All Users (requires admin privileges)</p></li>
+<li><p>Destination folder: <code class="docutils literal notranslate"><span class="pre">C:\Miniconda3</span></code></p></li>
+<li><p>Advanced Options: Add Miniconda3 to the system PATH environment variable</p></li>
+<li><p>Advanced Options: Register Miniconda3 as the system Python 3.X
+These will make sure that Anaconda is easily accessible from most places on your computer.</p></li>
+</ul>
+<p><strong>On Linux</strong>, it might be easier to do this straight from the terminal (<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>) with this one-liner:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh <span class="o">&amp;&amp;</span> bash Miniconda3-latest-Linux-x86_64.sh -b <span class="o">&amp;&amp;</span> ~/miniconda3/bin/conda init bash
+</pre></div>
+</div>
+<p>Restart the terminal after running this command.</p>
+<p><strong>On Macs</strong>, you can run the graphical installer using the pkg file, or this terminal command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh <span class="o">&amp;&amp;</span> bash Miniconda3-latest-MacOSX-x86_64.sh -b <span class="o">&amp;&amp;</span> ~/miniconda3/bin/conda init zsh
+</pre></div>
+</div>
+</section>
+<section id="installation-methods">
+<h2><a class="toc-backref" href="#id2">Installation methods</a><a class="headerlink" href="#installation-methods" title="Permalink to this headline">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Installation requires entering commands in a terminal. To open one:</p>
+<p><strong>Windows:</strong> Open the <em>Start menu</em> and search for the <em>Anaconda Command Prompt</em> (if using Miniconda) or the <em>Command Prompt</em> if not.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, our personal preference is to use alternative terminal apps like <a class="reference external" href="https://cmder.net">Cmder</a> or <a class="reference external" href="https://aka.ms/terminal">Windows Terminal</a>.</p>
+</div>
+<p><strong>Linux:</strong> Launch a new terminal by pressing <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>.</p>
+<p><strong>Mac:</strong> Launch a new terminal by pressing <kbd>Cmd</kbd> + <kbd>Space</kbd> and searching for <em>Terminal</em>.</p>
+</div>
+<section id="conda-package">
+<h3><a class="toc-backref" href="#id3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> package</a><a class="headerlink" href="#conda-package" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -y -n sleap -c sleap -c nvidia -c conda-forge <span class="nv">sleap</span><span class="o">=</span><span class="m">1</span>.2.8
+</pre></div>
+</div>
+<p><strong>This is the recommended installation method</strong>. Works on <strong>Windows</strong> and <strong>Linux</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This comes with CUDA to enable GPU support. All you need is to have an NVIDIA GPU and <a class="reference external" href="https://nvidia.com/drivers">updated drivers</a>.</p></li>
+<li><p>If you already have CUDA installed on your system, this will not conflict with it.</p></li>
+<li><p>This will also work in CPU mode if you don’t have a GPU on your machine.</p></li>
+</ul>
+</div>
+</section>
+<section id="conda-from-source">
+<h3><a class="toc-backref" href="#id4"><code class="docutils literal notranslate"><span class="pre">conda</span></code> from source</a><a class="headerlink" href="#conda-from-source" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>First, ensure git is installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
+</pre></div>
+</div>
+<p>If ‘git’ is not recognized, then <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">install git</a>.</p>
+</li>
+<li><p>Then, clone the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/talmolab/sleap <span class="o">&amp;&amp;</span> <span class="nb">cd</span> sleap
+</pre></div>
+</div>
+</li>
+<li><p>Finally, install from the environment file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml -n sleap
+</pre></div>
+</div>
+<p>If you do not have a NVIDIA GPU, then you should use the no CUDA environment file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment_no_cuda.yml -n sleap
+</pre></div>
+</div>
+<p>This works on <strong>Windows</strong>, <strong>Linux</strong> and <strong>Mac OS X</strong> (pre-M1). This is the <strong>recommended method for development</strong>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This installs SLEAP in development mode, which means that edits to the source code will be applied the next time you run SLEAP.</p></li>
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">sleap</span></code> in the command to create an environment with a different name (e.g., <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">sleap_develop</span></code>).</p></li>
+</ul>
+</div>
+</section>
+<section id="pip-package">
+<h3><a class="toc-backref" href="#id5"><code class="docutils literal notranslate"><span class="pre">pip</span></code> package</a><a class="headerlink" href="#pip-package" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">sleap</span><span class="o">==</span><span class="m">1</span>.2.8
+</pre></div>
+</div>
+<p>This works on <strong>any OS except M1</strong> and on <strong>Google Colab</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Requires Python 3.7 or 3.8.</p></li>
+<li><p>To enable GPU support, make sure that you have <strong>CUDA Toolkit v11.3</strong> and <strong>cuDNN v8.2</strong> installed.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will uninstall existing libraries and potentially install conflicting ones.</p>
+<p>We strongly recommend that you <strong>only use this method if you know what you’re doing</strong>!</p>
+</div>
+</section>
+<section id="m1-macs">
+<span id="m1mac"></span><h3><a class="toc-backref" href="#id6">M1 Macs</a><a class="headerlink" href="#m1-macs" title="Permalink to this headline">#</a></h3>
+<p>SLEAP can be installed on newer M1 Macs by following these instructions:</p>
+<ol>
+<li><p>In addition to being on an M1 Mac, make sure you’re on <strong>macOS Monterey</strong>, i.e., version 12+. We’ve tested this on a MacBook Pro (14-inch, 2021) running macOS version 12.0.1.</p></li>
+<li><p>If you don’t have it yet, install <strong>homebrew</strong>, a convenient package manager for Macs (skip this if you can run <code class="docutils literal notranslate"><span class="pre">brew</span></code> from the terminal):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This might take a little while since it’ll also install Xcode (which we’ll need later). Once it’s finished, run this to enable the <code class="docutils literal notranslate"><span class="pre">brew</span></code> command in your shell, then close and re-open the terminal for it to take effect:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(/opt/homebrew/bin/brew shellenv)&quot;&#39;</span> &gt;&gt; ~/.zprofile <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew shellenv<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install wget, a CLI downloading utility (also makes sure your homebrew setup worked):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install wget
+</pre></div>
+</div>
+</li>
+<li><p>Install the <strong>M1 Mac version of Miniconda</strong> – this is important, so make sure you don’t have the regular Mac version! If you’re not sure, type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">conda</span></code> and delete the containing directory to uninstall your existing conda. To install the correct Miniconda, just run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh <span class="o">&amp;&amp;</span> bash Miniconda3-latest-MacOSX-arm64.sh -b <span class="o">&amp;&amp;</span> rm Miniconda3-latest-MacOSX-arm64.sh <span class="o">&amp;&amp;</span> ~/miniconda3/bin/conda init zsh
+</pre></div>
+</div>
+<p>Then close and re-open the terminal again.</p>
+</li>
+<li><p><strong>Download the SLEAP</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> git clone https://github.com/talmolab/sleap.git sleap <span class="o">&amp;&amp;</span> <span class="nb">cd</span> sleap
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install SLEAP in a conda environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment_m1.yml
+</pre></div>
+</div>
+<p>Your Mac will then automatically sign a devil’s pact with Apple to install the correct versions of everything on your system. Once the blood sacrifice/installation process completes, SLEAP will be available in an environment called <code class="docutils literal notranslate"><span class="pre">sleap</span></code>.</p>
+<p><em>Note:</em> This installs SLEAP in development mode, so changes to the source code are immediately applied in case you wanted to mess around with it. You can also just do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to update it (no need to re-do any of the previous steps).</p>
+</li>
+<li><p><strong>Test it out</strong> by activating the environment and opening the GUI!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate sleap
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sleap-label
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="testing-that-things-are-working">
+<h2><a class="toc-backref" href="#id7">Testing that things are working</a><a class="headerlink" href="#testing-that-things-are-working" title="Permalink to this headline">#</a></h2>
+<p>If you installed using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, first activate the <code class="docutils literal notranslate"><span class="pre">sleap</span></code> environment by opening a terminal and typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate sleap
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Not sure what <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments you already installed? You can get a list of the environments on your system with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<section id="gui-support">
+<h3><a class="toc-backref" href="#id8">GUI support</a><a class="headerlink" href="#gui-support" title="Permalink to this headline">#</a></h3>
+<p>To check that the GUI is working, simply type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sleap-label
+</pre></div>
+</div>
+<p>You should see the SLEAP labeling interface pop up within a few moments.</p>
+</section>
+<section id="importing">
+<h3><a class="toc-backref" href="#id9">Importing</a><a class="headerlink" href="#importing" title="Permalink to this headline">#</a></h3>
+<p>To check if SLEAP is installed correctly in non-interactive environments, such as remote servers, confirm that you can import it with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -c <span class="s2">&quot;import sleap; sleap.versions()&quot;</span>
+</pre></div>
+</div>
+<p><small><strong>Output:</strong></small></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(sleap_develop) λ python -c &quot;import sleap; sleap.versions()&quot;
+SLEAP: 1.2.0
+TensorFlow: 2.7.1
+Numpy: 1.21.5
+Python: 3.7.11
+OS: Windows-10-10.0.19041-SP0
+</pre></div>
+</div>
+</section>
+<section id="gpu-support">
+<h3><a class="toc-backref" href="#id10">GPU support</a><a class="headerlink" href="#gpu-support" title="Permalink to this headline">#</a></h3>
+<p>Assuming you installed using either of the <code class="docutils literal notranslate"><span class="pre">conda</span></code>-based methods on Windows or Linux, SLEAP should automatically have GPU support enabled.</p>
+<p>To check, verify that SLEAP can detect the GPUs on your system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -c <span class="s2">&quot;import sleap; sleap.system_summary()&quot;</span>
+</pre></div>
+</div>
+<p><small><strong>Output:</strong></small></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(sleap_develop) λ python -c &quot;import sleap; sleap.system_summary()&quot;
+GPUs: 2/2 available
+  Device: /physical_device:GPU:0
+         Available: True
+        Initalized: False
+     Memory growth: None
+  Device: /physical_device:GPU:1
+         Available: True
+        Initalized: False
+     Memory growth: None
+</pre></div>
+</div>
+<p>SLEAP uses TensorFlow for GPU acceleration. To directly check if TensorFlow is detecting your GPUs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -c <span class="s2">&quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;</span>
+</pre></div>
+</div>
+<p><small><strong>Output:</strong></small></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(sleap_develop) λ python -c &quot;import tensorflow as tf; print(tf.config.list_physical_devices(&#39;GPU&#39;))&quot;
+[PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;), PhysicalDevice(name=&#39;/physical_device:GPU:1&#39;, device_type=&#39;GPU&#39;)]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>GPU support requires an NVIDIA GPU.</p></li>
+<li><p>If you haven’t yet (or in a while), update to the <a class="reference external" href="https://nvidia.com/drivers">latest NVIDIA drivers for your GPU</a>.</p></li>
+<li><p>We use the official conda packages for <a class="reference external" href="https://anaconda.org/anaconda/cudatoolkit">cudatoolkit</a> and <a class="reference external" href="https://anaconda.org/anaconda/cudnn">cudnn</a>, so no external installations are required. If you already have those installed on your system, they should not interfere with the ones in the SLEAP environment.</p></li>
+<li><p>TensorFlow 2.6-2.8 are compatible with <strong>CUDA Toolkit v11.3</strong> and <strong>cuDNN v8.2</strong>.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TensorFlow 2.7+ is currently failing to detect CUDA Toolkit and CuDNN on some systems (see <a class="reference external" href="https://github.com/tensorflow/tensorflow/issues/52988">Issue thread</a>).</p>
+<p>If you run into issues, try downgrading the TensorFlow 2.6:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.6.3
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="upgrading-and-uninstalling">
+<h2><a class="toc-backref" href="#id11">Upgrading and uninstalling</a><a class="headerlink" href="#upgrading-and-uninstalling" title="Permalink to this headline">#</a></h2>
+<p>We <strong>strongly recommend</strong> installing SLEAP in a fresh environment when updating. This is because dependency versions might change, and depending on the state of your previous environment, directly updating might break compatibility with some of them.</p>
+<p>To uninstall an existing environment named <code class="docutils literal notranslate"><span class="pre">sleap</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env remove -n sleap
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Not sure what <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments you already installed? You can get a list of the environments on your system with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env list
+</pre></div>
+</div>
+</div>
+<p>Once the environment has been removed, you are free to install SLEAP using any of the installation methods above into an environment of the same name.</p>
+</section>
+<section id="getting-help">
+<h2><a class="toc-backref" href="#id12">Getting help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h2>
+<p>If you run into any problems, check out the <a class="reference external" href="https://github.com/talmolab/sleap/discussions">Github Discussions</a> and <a class="reference external" href="https://github.com/talmolab/sleap/issues">GitHub Issues</a> to see if others have had the same problem.</p>
+<p>If you get any errors or the GUI fails to launch, try running the diagnostics to see what SLEAP is able to detect on your system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sleap-diagnostic
+</pre></div>
+</div>
+<p>If you were not able to get SLEAP installed, activate the conda environment it is in and generate a list of the package versions installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda list
+</pre></div>
+</div>
+<p>Then, <a class="reference external" href="https://github.com/talmolab/sleap/issues">open a new Issue</a> providing the versions from either command above, as well as any errors you saw in the console during the installation. Or <a class="reference external" href="https://github.com/talmolab/sleap/discussions">start a discussion</a> to get help from the community.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tutorials/tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By SLEAP Developers<br/>
+  
+      &copy; Copyright 2019–2022, Talmo Lab.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
