@@ -1,32 +1,42 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; SLEAP (v1.2.8)</title>
-    
+    <title>Index &#8212; SLEAP (v1.4.1a2)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -38,387 +48,280 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="canonical" href="/develop/genindex.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">SLEAP (v1.2.8)</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Home
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
-   Overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="installation.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="tutorials/tutorial.html">
-   Tutorial
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/new-project.html">
-     Creating a project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/initial-labeling.html">
-     Initial Labeling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/initial-training.html">
-     Training and Inference
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/assisted-labeling.html">
-     Prediction-assisted labeling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/proofreading.html">
-     Tracking instances across frames
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="tutorials/analysis.html">
-     Export Data For Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="guides/index.html">
-   Guides
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/gui.html">
-     GUI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/cli.html">
-     Command line interfaces
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/troubleshooting-workflows.html">
-     Troubleshooting workflows
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/skeletons.html">
-     Skeleton design
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/choosing-models.html">
-     Configuring models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/merging.html">
-     Importing predictions for labeling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/proofreading.html">
-     Tracking and proofreading
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/colab.html">
-     Run training and inference on Colab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/custom-training.html">
-     Creating a custom training profile
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="guides/remote.html">
-     Running SLEAP remotely
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="notebooks/index.html">
-   Notebooks
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Training_and_inference_on_an_example_dataset.html">
-     Training and inference on an example dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Training_and_inference_using_Google_Drive.html">
-     Training and inference on your own data using Google Drive
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Model_evaluation.html">
-     Model evaluation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Analysis_examples.html">
-     Analysis examples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Data_structures.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Post_inference_tracking.html">
-     Post-inference tracking
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Interactive_and_resumable_training.html">
-     Interactive and resumable training
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="notebooks/Interactive_and_realtime_inference.html">
-     Interactive and realtime inference
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="api.html">
-   Developer API
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/talmolab/sleap">
-   GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/talmolab/sleap/releases">
-   Releases
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="help.html">
-   Help
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/tutorial.html">Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/new-project.html">Creating a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initial-labeling.html">Initial Labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/initial-training.html">Training and Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/assisted-labeling.html">Prediction-assisted labeling</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="tutorials/proofreading.html">Tracking instances across frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/analysis.html">Export Data For Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="guides/index.html">Guides</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="guides/gui.html">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/cli.html">Command line interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/troubleshooting-workflows.html">Troubleshooting workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/skeletons.html">Skeleton design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/choosing-models.html">Configuring models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/merging.html">Importing predictions for labeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/proofreading.html">Tracking and proofreading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/colab.html">Run training and inference on Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/custom-training.html">Creating a custom training profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/remote.html">Running SLEAP remotely</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Training_and_inference_on_an_example_dataset.html">Training and inference on an example dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Training_and_inference_using_Google_Drive.html">Training and inference on your own data using Google Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Model_evaluation.html">Model evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Analysis_examples.html">Analysis examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Data_structures.html">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Post_inference_tracking.html">Post-inference tracking</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Interactive_and_resumable_training.html">Interactive and resumable training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Interactive_and_realtime_inference.html">Interactive and realtime inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">Developer API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/talmolab/sleap">GitHub</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/talmolab/sleap/releases">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talmolab/sleap" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talmolab/sleap/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
         </div>
     </div>
-    <div id="rtd-footer-container"></div>
 </div>
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/talmolab/sleap"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/talmolab/sleap/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-    </div>
-</div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
 
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
@@ -443,6 +346,18 @@ title="Open an issue"
  | <a href="#Z"><strong>Z</strong></a>
  
 </div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton._is_template">_is_template (sleap.skeleton.Skeleton attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton._skeleton_idx">_skeleton_idx (sleap.skeleton.Skeleton attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -484,6 +399,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.architectures.hrnet.html#sleap.nn.architectures.hrnet.adjust_prefix">adjust_prefix() (in module sleap.nn.architectures.hrnet)</a>
 </li>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter">AlbumentationsAugmenter (class in sleap.nn.data.augmentation)</a>
+</li>
       <li><a href="api/sleap.info.align.html#sleap.info.align.align_instance_points">align_instance_points() (in module sleap.info.align)</a>
 </li>
       <li><a href="api/sleap.info.align.html#sleap.info.align.align_instances">align_instances() (in module sleap.info.align)</a>
@@ -496,6 +413,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.alphatracker.html#sleap.io.format.alphatracker.AlphaTrackerAdaptor.all_exts">(sleap.io.format.alphatracker.AlphaTrackerAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.all_exts">(sleap.io.format.coco.LabelsCocoAdaptor property)</a>
+</li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.all_exts">(sleap.io.format.csv.CSVAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.all_exts">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor property)</a>
 </li>
@@ -512,6 +431,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.leap_matlab.html#sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor.all_exts">(sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.all_exts">(sleap.io.format.ndx_pose.NDXPoseAdaptor property)</a>
+</li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.all_exts">(sleap.io.format.nix.NixAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.all_exts">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor property)</a>
 </li>
@@ -542,9 +463,11 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.data.instance_centroids.html#sleap.nn.data.instance_centroids.InstanceCentroidFinder.anchor_part_names">anchor_part_names (sleap.nn.data.instance_centroids.InstanceCentroidFinder attribute)</a>
 </li>
-      <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.append">append() (sleap.io.dataset.Labels method)</a>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.append">append() (sleap.instance.InstancesList method)</a>
 
       <ul>
+        <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.append">(sleap.io.dataset.Labels method)</a>
+</li>
         <li><a href="api/sleap.nn.data.pipelines.html#sleap.nn.data.pipelines.Pipeline.append">(sleap.nn.data.pipelines.Pipeline method)</a>
 </li>
       </ul></li>
@@ -568,7 +491,9 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.config.optimization.html#sleap.nn.config.optimization.AugmentationConfig">AugmentationConfig (class in sleap.nn.config.optimization)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.augmenter">augmenter (sleap.nn.data.augmentation.ImgaugAugmenter attribute)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.augmenter">augmenter (sleap.nn.data.augmentation.AlbumentationsAugmenter attribute)</a>
+</li>
+      <li><a href="api/sleap.io.video.html#sleap.io.video.available_video_exts">available_video_exts() (in module sleap.io.video)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -583,6 +508,8 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.BackboneConfig">BackboneConfig (class in sleap.nn.config.model)</a>
+</li>
+      <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.ModelConfig.base_checkpoint">base_checkpoint (sleap.nn.config.model.ModelConfig attribute)</a>
 </li>
       <li><a href="api/sleap.message.html#sleap.message.BaseMessageParticipant">BaseMessageParticipant (class in sleap.message)</a>
 </li>
@@ -600,6 +527,8 @@ title="Open an issue"
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpMultiClassPredictor.batch_size">(sleap.nn.inference.BottomUpMultiClassPredictor attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.batch_size">(sleap.nn.inference.BottomUpPredictor attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.batch_size">(sleap.nn.inference.MoveNetPredictor attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.batch_size">(sleap.nn.inference.SingleInstancePredictor attribute)</a>
 </li>
@@ -622,10 +551,10 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.architectures.encoder_decoder.html#sleap.nn.architectures.encoder_decoder.SimpleConvBlock.block_prefix">block_prefix (sleap.nn.architectures.encoder_decoder.SimpleConvBlock attribute)</a>
 </li>
-      <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.UpsamplingConfig.block_stride">block_stride (sleap.nn.config.model.UpsamplingConfig attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.UpsamplingConfig.block_stride">block_stride (sleap.nn.config.model.UpsamplingConfig attribute)</a>
+</li>
       <li><a href="api/sleap.nn.architectures.resnet.html#sleap.nn.architectures.resnet.block_v1">block_v1() (in module sleap.nn.architectures.resnet)</a>
 </li>
       <li><a href="api/sleap.nn.architectures.hrnet.html#sleap.nn.architectures.hrnet.HigherHRNet.bottleneck">bottleneck (sleap.nn.architectures.hrnet.HigherHRNet attribute)</a>
@@ -705,6 +634,10 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.call">(sleap.nn.inference.InferenceLayer method)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.call">(sleap.nn.inference.MoveNetInferenceLayer method)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceModel.call">(sleap.nn.inference.MoveNetInferenceModel method)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceLayer.call">(sleap.nn.inference.SingleInstanceInferenceLayer method)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceModel.call">(sleap.nn.inference.SingleInstanceInferenceModel method)</a>
@@ -727,6 +660,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.can_read_file">(sleap.io.format.coco.LabelsCocoAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.can_read_file">(sleap.io.format.csv.CSVAdaptor method)</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.can_read_file">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor.can_read_file">(sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor method)</a>
@@ -743,6 +678,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.can_read_file">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.can_read_file">(sleap.io.format.nix.NixAdaptor class method)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.can_read_file">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.can_read_file">(sleap.io.format.text.TextAdaptor method)</a>
@@ -754,6 +691,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.alphatracker.html#sleap.io.format.alphatracker.AlphaTrackerAdaptor.can_write_filename">(sleap.io.format.alphatracker.AlphaTrackerAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.can_write_filename">(sleap.io.format.coco.LabelsCocoAdaptor method)</a>
+</li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.can_write_filename">(sleap.io.format.csv.CSVAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.can_write_filename">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor method)</a>
 </li>
@@ -771,6 +710,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.can_write_filename">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.can_write_filename">(sleap.io.format.nix.NixAdaptor method)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.can_write_filename">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.can_write_filename">(sleap.io.format.text.TextAdaptor method)</a>
@@ -783,6 +724,8 @@ title="Open an issue"
       <li><a href="api/sleap.nn.data.instance_centroids.html#sleap.nn.data.instance_centroids.InstanceCentroidFinder.center_on_anchor_part">center_on_anchor_part (sleap.nn.data.instance_centroids.InstanceCentroidFinder attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.data.html#sleap.nn.config.data.InstanceCroppingConfig.center_on_part">center_on_part (sleap.nn.config.data.InstanceCroppingConfig attribute)</a>
+</li>
+      <li><a href="api/sleap.nn.data.resizing.html#sleap.nn.data.resizing.SizeMatcher.center_pad">center_pad (sleap.nn.data.resizing.SizeMatcher attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.HeadsConfig.centered_instance">centered_instance (sleap.nn.config.model.HeadsConfig attribute)</a>
 </li>
@@ -886,12 +829,12 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.io.asyncvideo.html#sleap.io.asyncvideo.AsyncVideo.chunks">chunks (sleap.io.asyncvideo.AsyncVideo property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.nn.data.identity.html#sleap.nn.data.identity.ClassMapGenerator.class_map_threshold">class_map_threshold (sleap.nn.data.identity.ClassMapGenerator attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.MultiClassBottomUpConfig.class_maps">class_maps (sleap.nn.config.model.MultiClassBottomUpConfig attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.nn.data.pipelines.html#sleap.nn.data.pipelines.BottomUpMultiClassPipeline.class_maps_head">class_maps_head (sleap.nn.data.pipelines.BottomUpMultiClassPipeline attribute)</a>
 </li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpMultiClassInferenceLayer.class_maps_ind">class_maps_ind (sleap.nn.inference.BottomUpMultiClassInferenceLayer attribute)</a>
@@ -933,6 +876,8 @@ title="Open an issue"
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.Tracker.cleaner">cleaner (sleap.nn.tracking.Tracker attribute)</a>
 </li>
       <li><a href="api/sleap.nn.training.html#sleap.nn.training.Trainer.cleanup">cleanup() (sleap.nn.training.Trainer method)</a>
+</li>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.clear">clear() (sleap.instance.InstancesList method)</a>
 </li>
       <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.clear_edges">clear_edges() (sleap.skeleton.Skeleton method)</a>
 </li>
@@ -1072,9 +1017,15 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.architectures.unet.html#sleap.nn.architectures.unet.UNet.convs_per_block">convs_per_block (sleap.nn.architectures.unet.UNet attribute)</a>
 </li>
-      <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.copy">copy() (sleap.io.dataset.Labels method)</a>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.copy">copy() (sleap.instance.InstancesList method)</a>
+
+      <ul>
+        <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.copy">(sleap.io.dataset.Labels method)</a>
 </li>
+      </ul></li>
       <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.FrameMatches.cost_matrix">cost_matrix (sleap.nn.tracker.components.FrameMatches attribute)</a>
+</li>
+      <li><a href="api/sleap.nn.training.html#sleap.nn.training.create_trainer_using_cli">create_trainer_using_cli() (in module sleap.nn.training)</a>
 </li>
       <li><a href="api/sleap.io.videowriter.html#sleap.io.videowriter.VideoWriterSkvideo.crf">crf (sleap.io.videowriter.VideoWriterSkvideo attribute)</a>
 </li>
@@ -1106,6 +1057,8 @@ title="Open an issue"
         <li><a href="api/sleap.nn.data.instance_cropping.html#sleap.nn.data.instance_cropping.InstanceCropper.crop_width">(sleap.nn.data.instance_cropping.InstanceCropper attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor">CSVAdaptor (class in sleap.io.format.csv)</a>
+</li>
       <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.cull_frame_instances">cull_frame_instances() (in module sleap.nn.tracker.components)</a>
 </li>
       <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.cull_instances">cull_instances() (in module sleap.nn.tracker.components)</a>
@@ -1144,6 +1097,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.training.html#sleap.nn.training.DataReaders">DataReaders (class in sleap.nn.training)</a>
 </li>
+      <li><a href="api/sleap.util.html#sleap.util.decode_preview_image">decode_preview_image() (in module sleap.util)</a>
+</li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.PretrainedEncoderConfig.decoder_batchnorm">decoder_batchnorm (sleap.nn.config.model.PretrainedEncoderConfig attribute)</a>
 </li>
       <li><a href="api/sleap.nn.architectures.encoder_decoder.html#sleap.nn.architectures.encoder_decoder.EncoderDecoder.decoder_features_stride">decoder_features_stride (sleap.nn.architectures.encoder_decoder.EncoderDecoder property)</a>
@@ -1177,6 +1132,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.default_ext">(sleap.io.format.coco.LabelsCocoAdaptor property)</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.default_ext">(sleap.io.format.csv.CSVAdaptor property)</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.default_ext">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor.default_ext">(sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor property)</a>
@@ -1193,6 +1150,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.default_ext">(sleap.io.format.ndx_pose.NDXPoseAdaptor property)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.default_ext">(sleap.io.format.nix.NixAdaptor property)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.default_ext">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.default_ext">(sleap.io.format.text.TextAdaptor property)</a>
@@ -1206,8 +1165,6 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.delete_symmetry">delete_symmetry() (sleap.skeleton.Skeleton method)</a>
 </li>
-      <li><a href="api/sleap.nn.config.outputs.html#sleap.nn.config.outputs.OutputsConfig.delete_viz_images">delete_viz_images (sleap.nn.config.outputs.OutputsConfig attribute)</a>
-</li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.describe">describe() (sleap.io.dataset.Labels method)</a>
 
       <ul>
@@ -1217,7 +1174,11 @@ title="Open an issue"
       <li><a href="api/sleap.nn.data.utils.html#sleap.nn.data.utils.describe_tensors">describe_tensors() (in module sleap.nn.data.utils)</a>
 </li>
       <li><a href="api/sleap.nn.config.training_job.html#sleap.nn.config.training_job.TrainingJobConfig.description">description (sleap.nn.config.training_job.TrainingJobConfig attribute)</a>
+
+      <ul>
+        <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.description">(sleap.skeleton.Skeleton attribute)</a>
 </li>
+      </ul></li>
       <li><a href="api/sleap.util.html#sleap.util.dict_cut">dict_cut() (in module sleap.util)</a>
 </li>
       <li><a href="api/sleap.nn.system.html#sleap.nn.system.disable_preallocation">disable_preallocation() (in module sleap.nn.system)</a>
@@ -1245,6 +1206,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.does_read">(sleap.io.format.coco.LabelsCocoAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.does_read">(sleap.io.format.csv.CSVAdaptor method)</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.does_read">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor.does_read">(sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor method)</a>
@@ -1261,6 +1224,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.does_read">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.does_read">(sleap.io.format.nix.NixAdaptor class method)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.does_read">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.does_read">(sleap.io.format.text.TextAdaptor method)</a>
@@ -1272,6 +1237,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.alphatracker.html#sleap.io.format.alphatracker.AlphaTrackerAdaptor.does_write">(sleap.io.format.alphatracker.AlphaTrackerAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.does_write">(sleap.io.format.coco.LabelsCocoAdaptor method)</a>
+</li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.does_write">(sleap.io.format.csv.CSVAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.does_write">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor method)</a>
 </li>
@@ -1288,6 +1255,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.leap_matlab.html#sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor.does_write">(sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.does_write">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
+</li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.does_write">(sleap.io.format.nix.NixAdaptor class method)</a>
 </li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.does_write">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor method)</a>
 </li>
@@ -1407,7 +1376,13 @@ title="Open an issue"
       <li><a href="api/sleap.nn.architectures.encoder_decoder.html#sleap.nn.architectures.encoder_decoder.EncoderDecoder">EncoderDecoder (class in sleap.nn.architectures.encoder_decoder)</a>
 </li>
       <li><a href="api/sleap.nn.data.normalization.html#sleap.nn.data.normalization.Normalizer.ensure_float">ensure_float (sleap.nn.data.normalization.Normalizer attribute)</a>
+
+      <ul>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.ensure_float">(sleap.nn.inference.InferenceLayer attribute)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.ensure_float">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/sleap.nn.data.normalization.html#sleap.nn.data.normalization.ensure_float">ensure_float() (in module sleap.nn.data.normalization)</a>
 </li>
       <li><a href="api/sleap.nn.config.data.html#sleap.nn.config.data.PreprocessingConfig.ensure_grayscale">ensure_grayscale (sleap.nn.config.data.PreprocessingConfig attribute)</a>
@@ -1416,6 +1391,8 @@ title="Open an issue"
         <li><a href="api/sleap.nn.data.normalization.html#sleap.nn.data.normalization.Normalizer.ensure_grayscale">(sleap.nn.data.normalization.Normalizer attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.ensure_grayscale">(sleap.nn.inference.InferenceLayer attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.ensure_grayscale">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1468,6 +1445,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.export_cli">export_cli() (in module sleap.nn.inference)</a>
 </li>
+      <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.export_csv">export_csv() (sleap.io.dataset.Labels method)</a>
+</li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.export_model">export_model() (in module sleap.nn.inference)</a>
 
       <ul>
@@ -1486,6 +1465,8 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.export_nwb">export_nwb() (sleap.io.dataset.Labels method)</a>
 </li>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.extend">extend() (sleap.instance.InstancesList method)</a>
+</li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.extend_from">extend_from() (sleap.io.dataset.Labels method)</a>
 </li>
       <li><a href="api/sleap.info.feature_suggestions.html#sleap.info.feature_suggestions.FrameGroupSet.extend_group_items">extend_group_items() (sleap.info.feature_suggestions.FrameGroupSet method)</a>
@@ -1500,6 +1481,8 @@ title="Open an issue"
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.factory_object_keypoint_similarity">factory_object_keypoint_similarity() (in module sleap.nn.tracker.components)</a>
+</li>
       <li><a href="api/sleap.nn.architectures.resnet.html#sleap.nn.architectures.resnet.ResNet101.features_output_stride">features_output_stride (sleap.nn.architectures.resnet.ResNet101 attribute)</a>
 
       <ul>
@@ -1672,6 +1655,10 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowCandidateMaker">FlowCandidateMaker (class in sleap.nn.tracking)</a>
 </li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracker">FlowMaxTracker (class in sleap.nn.tracking)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracksCandidateMaker">FlowMaxTracksCandidateMaker (class in sleap.nn.tracking)</a>
+</li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowTracker">FlowTracker (class in sleap.nn.tracking)</a>
 </li>
       <li><a href="api/sleap.io.format.filehandle.html#sleap.io.format.filehandle.FileHandle.format_id">format_id (sleap.io.format.filehandle.FileHandle property)</a>
@@ -1726,6 +1713,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.data.pipelines.html#sleap.nn.data.pipelines.Pipeline.from_blocks">from_blocks() (sleap.nn.data.pipelines.Pipeline class method)</a>
 </li>
+      <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.FrameMatches.from_candidate_instances">from_candidate_instances() (sleap.nn.tracker.components.FrameMatches class method)</a>
+</li>
       <li><a href="api/sleap.nn.architectures.hourglass.html#sleap.nn.architectures.hourglass.Hourglass.from_config">from_config() (sleap.nn.architectures.hourglass.Hourglass class method)</a>
 
       <ul>
@@ -1739,7 +1728,7 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.nn.architectures.upsampling.html#sleap.nn.architectures.upsampling.UpsamplingStack.from_config">(sleap.nn.architectures.upsampling.UpsamplingStack class method)</a>
 </li>
-        <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.from_config">(sleap.nn.data.augmentation.ImgaugAugmenter class method)</a>
+        <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.from_config">(sleap.nn.data.augmentation.AlbumentationsAugmenter class method)</a>
 </li>
         <li><a href="api/sleap.nn.data.instance_centroids.html#sleap.nn.data.instance_centroids.InstanceCentroidFinder.from_config">(sleap.nn.data.instance_centroids.InstanceCentroidFinder class method)</a>
 </li>
@@ -1839,6 +1828,8 @@ title="Open an issue"
       <ul>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.from_trained_models">(sleap.nn.inference.BottomUpPredictor class method)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.from_trained_models">(sleap.nn.inference.MoveNetPredictor class method)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.from_trained_models">(sleap.nn.inference.SingleInstancePredictor class method)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.TopDownMultiClassPredictor.from_trained_models">(sleap.nn.inference.TopDownMultiClassPredictor class method)</a>
@@ -1885,6 +1876,8 @@ title="Open an issue"
       <li><a href="api/sleap.nn.config.optimization.html#sleap.nn.config.optimization.AugmentationConfig.gaussian_noise_stddev">gaussian_noise_stddev (sleap.nn.config.optimization.AugmentationConfig attribute)</a>
 </li>
       <li><a href="api/sleap.nn.data.utils.html#sleap.nn.data.utils.gaussian_pdf">gaussian_pdf() (in module sleap.nn.data.utils)</a>
+</li>
+      <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.generate_skeleton_preview_image">generate_skeleton_preview_image() (in module sleap.nn.viz)</a>
 </li>
       <li><a href="api/sleap.io.format.genericjson.html#sleap.io.format.genericjson.GenericJsonAdaptor">GenericJsonAdaptor (class in sleap.io.format.genericjson)</a>
 </li>
@@ -1960,10 +1953,10 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.info.align.html#sleap.info.align.get_most_stable_node_pair">get_most_stable_node_pair() (in module sleap.info.align)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.get_next_suggestion">get_next_suggestion() (sleap.io.dataset.Labels method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.info.write_tracking_h5.html#sleap.info.write_tracking_h5.get_nodes_as_np_strings">get_nodes_as_np_strings() (in module sleap.info.write_tracking_h5)</a>
 </li>
       <li><a href="api/sleap.info.write_tracking_h5.html#sleap.info.write_tracking_h5.get_occupancy_and_points_matrices">get_occupancy_and_points_matrices() (in module sleap.info.write_tracking_h5)</a>
@@ -1983,6 +1976,12 @@ title="Open an issue"
       <li><a href="api/sleap.info.summary.html#sleap.info.summary.StatisticSeries.get_primary_point_displacement_series">get_primary_point_displacement_series() (sleap.info.summary.StatisticSeries method)</a>
 </li>
       <li><a href="api/sleap.info.feature_suggestions.html#sleap.info.feature_suggestions.ItemStack.get_raw_images">get_raw_images() (sleap.info.feature_suggestions.ItemStack method)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracksCandidateMaker.get_ref_instances">get_ref_instances() (sleap.nn.tracking.FlowMaxTracksCandidateMaker static method)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowCandidateMaker.get_shifted_instances">get_shifted_instances() (sleap.nn.tracking.FlowCandidateMaker method)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowCandidateMaker.get_shifted_instances_from_earlier_time">get_shifted_instances_from_earlier_time() (sleap.nn.tracking.FlowCandidateMaker method)</a>
 </li>
       <li><a href="api/sleap.info.align.html#sleap.info.align.get_stable_node_pairs">get_stable_node_pairs() (in module sleap.info.align)</a>
 </li>
@@ -2057,6 +2056,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.handles">(sleap.io.format.coco.LabelsCocoAdaptor property)</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.handles">(sleap.io.format.csv.CSVAdaptor property)</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.handles">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor.handles">(sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor property)</a>
@@ -2072,6 +2073,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.leap_matlab.html#sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor.handles">(sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.handles">(sleap.io.format.ndx_pose.NDXPoseAdaptor property)</a>
+</li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.handles">(sleap.io.format.nix.NixAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.handles">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor property)</a>
 </li>
@@ -2172,7 +2175,7 @@ title="Open an issue"
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.instance.html#sleap.instance.LabeledFrame.image">image (sleap.instance.LabeledFrame property)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.image_key">image_key (sleap.nn.data.augmentation.ImgaugAugmenter attribute)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.image_key">image_key (sleap.nn.data.augmentation.AlbumentationsAugmenter attribute)</a>
 
       <ul>
         <li><a href="api/sleap.nn.data.instance_cropping.html#sleap.nn.data.instance_cropping.InstanceCropper.image_key">(sleap.nn.data.instance_cropping.InstanceCropper attribute)</a>
@@ -2196,8 +2199,6 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.io.visuals.html#sleap.io.visuals.img_to_cv">img_to_cv() (in module sleap.io.visuals)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter">ImgaugAugmenter (class in sleap.nn.data.augmentation)</a>
-</li>
       <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.imgfig">imgfig() (in module sleap.nn.viz)</a>
 </li>
       <li><a href="api/sleap.io.video.html#sleap.io.video.ImgStoreVideo.imgstore">imgstore (sleap.io.video.ImgStoreVideo property)</a>
@@ -2213,11 +2214,17 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpMultiClassInferenceModel.inference_layer">inference_layer (sleap.nn.inference.BottomUpMultiClassInferenceModel attribute)</a>
+
+      <ul>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceModel.inference_layer">(sleap.nn.inference.MoveNetInferenceModel attribute)</a>
 </li>
+      </ul></li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpMultiClassPredictor.inference_model">inference_model (sleap.nn.inference.BottomUpMultiClassPredictor attribute)</a>
 
       <ul>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.inference_model">(sleap.nn.inference.BottomUpPredictor attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.inference_model">(sleap.nn.inference.MoveNetPredictor attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.inference_model">(sleap.nn.inference.SingleInstancePredictor attribute)</a>
 </li>
@@ -2242,7 +2249,7 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.data.general.html#sleap.nn.data.general.LambdaMap.input_key_names">input_key_names (sleap.nn.data.general.LambdaMap attribute)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.input_keys">input_keys (sleap.nn.data.augmentation.ImgaugAugmenter property)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.input_keys">input_keys (sleap.nn.data.augmentation.AlbumentationsAugmenter property)</a>
 
       <ul>
         <li><a href="api/sleap.nn.data.confidence_maps.html#sleap.nn.data.confidence_maps.InstanceConfidenceMapGenerator.input_keys">(sleap.nn.data.confidence_maps.InstanceConfidenceMapGenerator property)</a>
@@ -2323,6 +2330,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.input_scale">(sleap.nn.inference.InferenceLayer attribute)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.input_scale">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceLayer.input_scale">(sleap.nn.inference.SingleInstanceInferenceLayer attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.TopDownMultiClassFindPeaks.input_scale">(sleap.nn.inference.TopDownMultiClassFindPeaks attribute)</a>
@@ -2330,9 +2339,11 @@ title="Open an issue"
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/sleap.instance.html#sleap.instance.LabeledFrame.insert">insert() (sleap.instance.LabeledFrame method)</a>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.insert">insert() (sleap.instance.InstancesList method)</a>
 
       <ul>
+        <li><a href="api/sleap.instance.html#sleap.instance.LabeledFrame.insert">(sleap.instance.LabeledFrame method)</a>
+</li>
         <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.insert">(sleap.io.dataset.Labels method)</a>
 </li>
       </ul></li>
@@ -2366,7 +2377,7 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.instances">instances() (sleap.io.dataset.Labels method)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.instances_key">instances_key (sleap.nn.data.augmentation.ImgaugAugmenter attribute)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.instances_key">instances_key (sleap.nn.data.augmentation.AlbumentationsAugmenter attribute)</a>
 
       <ul>
         <li><a href="api/sleap.nn.data.instance_centroids.html#sleap.nn.data.instance_centroids.InstanceCentroidFinder.instances_key">(sleap.nn.data.instance_centroids.InstanceCentroidFinder attribute)</a>
@@ -2375,6 +2386,8 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.instance.html#sleap.instance.LabeledFrame.instances_to_show">instances_to_show (sleap.instance.LabeledFrame property)</a>
+</li>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList">InstancesList (class in sleap.instance)</a>
 </li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpInferenceLayer.integral_patch_size">integral_patch_size (sleap.nn.inference.BottomUpInferenceLayer attribute)</a>
 
@@ -2437,6 +2450,8 @@ title="Open an issue"
       <ul>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.is_grayscale">(sleap.nn.inference.BottomUpPredictor property)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.is_grayscale">(sleap.nn.inference.MoveNetPredictor property)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.Predictor.is_grayscale">(sleap.nn.inference.Predictor property)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.is_grayscale">(sleap.nn.inference.SingleInstancePredictor property)</a>
@@ -2459,6 +2474,8 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.is_multi_instance">is_multi_instance (sleap.io.dataset.Labels property)</a>
+</li>
+      <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.is_template">is_template (sleap.skeleton.Skeleton property)</a>
 </li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.KalmanTracker.is_valid">is_valid (sleap.nn.tracking.KalmanTracker property)</a>
 </li>
@@ -2500,6 +2517,8 @@ title="Open an issue"
         <li><a href="api/sleap.nn.data.resizing.html#sleap.nn.data.resizing.SizeMatcher.keep_full_image">(sleap.nn.data.resizing.SizeMatcher attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.nn.config.outputs.html#sleap.nn.config.outputs.OutputsConfig.keep_viz_images">keep_viz_images (sleap.nn.config.outputs.OutputsConfig attribute)</a>
+</li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpInferenceLayer.keras_model">keras_model (sleap.nn.inference.BottomUpInferenceLayer attribute)</a>
 
       <ul>
@@ -2510,6 +2529,8 @@ title="Open an issue"
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.FindInstancePeaks.keras_model">(sleap.nn.inference.FindInstancePeaks attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.keras_model">(sleap.nn.inference.InferenceLayer attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.keras_model">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceLayer.keras_model">(sleap.nn.inference.SingleInstanceInferenceLayer attribute)</a>
 </li>
@@ -2548,6 +2569,8 @@ title="Open an issue"
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.labeled_frame">labeled_frame (sleap.instance.InstancesList property)</a>
+</li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.labeled_frames">labeled_frames (sleap.io.dataset.Labels attribute)</a>
 </li>
       <li><a href="api/sleap.instance.html#sleap.instance.LabeledFrame">LabeledFrame (class in sleap.instance)</a>
@@ -2796,6 +2819,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.model.html#sleap.nn.model.Model.make_model">make_model() (sleap.nn.model.Model method)</a>
 </li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.make_model_movenet">make_model_movenet() (in module sleap.nn.inference)</a>
+</li>
       <li><a href="api/sleap.nn.data.confidence_maps.html#sleap.nn.data.confidence_maps.make_multi_confmaps">make_multi_confmaps() (in module sleap.nn.data.confidence_maps)</a>
 </li>
       <li><a href="api/sleap.nn.data.confidence_maps.html#sleap.nn.data.confidence_maps.make_multi_confmaps_with_offsets">make_multi_confmaps_with_offsets() (in module sleap.nn.data.confidence_maps)</a>
@@ -2916,6 +2941,8 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.Tracker.matching_function">matching_function (sleap.nn.tracking.Tracker attribute)</a>
 </li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracker.matching_function">matching_function() (sleap.nn.tracking.FlowMaxTracker method)</a>
+</li>
       <li><a href="api/sleap.nn.callbacks.html#sleap.nn.callbacks.MatplotlibSaver">MatplotlibSaver (class in sleap.nn.callbacks)</a>
 </li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.max_edge_length_ratio">max_edge_length_ratio (sleap.nn.inference.BottomUpPredictor attribute)</a>
@@ -2940,6 +2967,14 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.data.resizing.html#sleap.nn.data.resizing.SizeMatcher.max_image_width">max_image_width (sleap.nn.data.resizing.SizeMatcher attribute)</a>
 </li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.max_instances">max_instances (sleap.nn.inference.BottomUpPredictor attribute)</a>
+
+      <ul>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.CentroidCrop.max_instances">(sleap.nn.inference.CentroidCrop attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.TopDownPredictor.max_instances">(sleap.nn.inference.TopDownPredictor attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.HourglassConfig.max_stride">max_stride (sleap.nn.config.model.HourglassConfig attribute)</a>
 
       <ul>
@@ -2950,6 +2985,10 @@ title="Open an issue"
         <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.UNetConfig.max_stride">(sleap.nn.config.model.UNetConfig attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.Tracker.max_tracking">max_tracking (sleap.nn.tracking.Tracker attribute)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracksCandidateMaker.max_tracks">max_tracks (sleap.nn.tracking.FlowMaxTracksCandidateMaker attribute)</a>
+</li>
       <li><a href="api/sleap.nn.architectures.encoder_decoder.html#sleap.nn.architectures.encoder_decoder.EncoderDecoder.maximum_stride">maximum_stride (sleap.nn.architectures.encoder_decoder.EncoderDecoder property)</a>
 
       <ul>
@@ -3027,7 +3066,13 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.nn.architectures.resnet.html#sleap.nn.architectures.resnet.ResNetv1.model_name">model_name (sleap.nn.architectures.resnet.ResNetv1 attribute)</a>
+
+      <ul>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.model_name">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.model_name">(sleap.nn.inference.MoveNetPredictor attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/sleap.nn.callbacks.html#sleap.nn.callbacks.ModelCheckpointOnEvent">ModelCheckpointOnEvent (class in sleap.nn.callbacks)</a>
 </li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.ModelConfig">ModelConfig (class in sleap.nn.config.model)</a>
@@ -3064,6 +3109,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#module-sleap.io.format.coco">sleap.io.format.coco</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#module-sleap.io.format.csv">sleap.io.format.csv</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#module-sleap.io.format.deeplabcut">sleap.io.format.deeplabcut</a>
 </li>
         <li><a href="api/sleap.io.format.deepposekit.html#module-sleap.io.format.deepposekit">sleap.io.format.deepposekit</a>
@@ -3083,6 +3130,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.main.html#module-sleap.io.format.main">sleap.io.format.main</a>
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#module-sleap.io.format.ndx_pose">sleap.io.format.ndx_pose</a>
+</li>
+        <li><a href="api/sleap.io.format.nix.html#module-sleap.io.format.nix">sleap.io.format.nix</a>
 </li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#module-sleap.io.format.sleap_analysis">sleap.io.format.sleap_analysis</a>
 </li>
@@ -3201,6 +3250,12 @@ title="Open an issue"
         <li><a href="api/sleap.util.html#module-sleap.util">sleap.util</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer">MoveNetInferenceLayer (class in sleap.nn.inference)</a>
+</li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceModel">MoveNetInferenceModel (class in sleap.nn.inference)</a>
+</li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor">MoveNetPredictor (class in sleap.nn.inference)</a>
+</li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.HeadsConfig.multi_class_bottomup">multi_class_bottomup (sleap.nn.config.model.HeadsConfig attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.HeadsConfig.multi_class_topdown">multi_class_topdown (sleap.nn.config.model.HeadsConfig attribute)</a>
@@ -3248,6 +3303,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.coco.html#sleap.io.format.coco.LabelsCocoAdaptor.name">(sleap.io.format.coco.LabelsCocoAdaptor property)</a>
 </li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.name">(sleap.io.format.csv.CSVAdaptor property)</a>
+</li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor.name">(sleap.io.format.deeplabcut.LabelsDeepLabCutCsvAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.deeplabcut.html#sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor.name">(sleap.io.format.deeplabcut.LabelsDeepLabCutYamlAdaptor property)</a>
@@ -3263,6 +3320,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.leap_matlab.html#sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor.name">(sleap.io.format.leap_matlab.LabelsLeapMatlabAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.name">(sleap.io.format.ndx_pose.NDXPoseAdaptor property)</a>
+</li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.name">(sleap.io.format.nix.NixAdaptor property)</a>
 </li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.name">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor property)</a>
 </li>
@@ -3282,6 +3341,8 @@ title="Open an issue"
       <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor">NDXPoseAdaptor (class in sleap.io.format.ndx_pose)</a>
 </li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.negative_anchors">negative_anchors (sleap.io.dataset.Labels attribute)</a>
+</li>
+      <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor">NixAdaptor (class in sleap.io.format.nix)</a>
 </li>
       <li><a href="api/sleap.nn.tracker.components.html#sleap.nn.tracker.components.nms_fast">nms_fast() (in module sleap.nn.tracker.components)</a>
 </li>
@@ -3471,7 +3532,7 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.data.general.html#sleap.nn.data.general.LambdaMap.output_key_names">output_key_names (sleap.nn.data.general.LambdaMap attribute)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.output_keys">output_keys (sleap.nn.data.augmentation.ImgaugAugmenter property)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.output_keys">output_keys (sleap.nn.data.augmentation.AlbumentationsAugmenter property)</a>
 
       <ul>
         <li><a href="api/sleap.nn.data.confidence_maps.html#sleap.nn.data.confidence_maps.InstanceConfidenceMapGenerator.output_keys">(sleap.nn.data.confidence_maps.InstanceConfidenceMapGenerator property)</a>
@@ -3644,6 +3705,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceLayer.pad_to_stride">(sleap.nn.inference.InferenceLayer attribute)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetInferenceLayer.pad_to_stride">(sleap.nn.inference.MoveNetInferenceLayer attribute)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceLayer.pad_to_stride">(sleap.nn.inference.SingleInstanceInferenceLayer attribute)</a>
 </li>
       </ul></li>
@@ -3712,6 +3775,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.FindInstancePeaks.peak_threshold">(sleap.nn.inference.FindInstancePeaks attribute)</a>
 </li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.peak_threshold">(sleap.nn.inference.MoveNetPredictor attribute)</a>
+</li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstanceInferenceLayer.peak_threshold">(sleap.nn.inference.SingleInstanceInferenceLayer attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.peak_threshold">(sleap.nn.inference.SingleInstancePredictor attribute)</a>
@@ -3733,6 +3798,8 @@ title="Open an issue"
 
       <ul>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpPredictor.pipeline">(sleap.nn.inference.BottomUpPredictor attribute)</a>
+</li>
+        <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.MoveNetPredictor.pipeline">(sleap.nn.inference.MoveNetPredictor attribute)</a>
 </li>
         <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.SingleInstancePredictor.pipeline">(sleap.nn.inference.SingleInstancePredictor attribute)</a>
 </li>
@@ -3769,10 +3836,10 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.plot_img">plot_img() (in module sleap.nn.viz)</a>
 </li>
-      <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.plot_instance">plot_instance() (in module sleap.nn.viz)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.plot_instance">plot_instance() (in module sleap.nn.viz)</a>
+</li>
       <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.plot_instances">plot_instances() (in module sleap.nn.viz)</a>
 </li>
       <li><a href="api/sleap.nn.viz.html#sleap.nn.viz.plot_pafs">plot_pafs() (in module sleap.nn.viz)</a>
@@ -3828,6 +3895,8 @@ title="Open an issue"
 </li>
       </ul></li>
       <li><a href="api/sleap.nn.architectures.unet.html#sleap.nn.architectures.unet.PoolingBlock">PoolingBlock (class in sleap.nn.architectures.unet)</a>
+</li>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.pop">pop() (sleap.instance.InstancesList method)</a>
 </li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.InferenceModel.predict">predict() (sleap.nn.inference.InferenceModel method)</a>
 
@@ -3893,6 +3962,8 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.config.model.html#sleap.nn.config.model.PretrainedEncoderConfig">PretrainedEncoderConfig (class in sleap.nn.config.model)</a>
 </li>
+      <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.preview_image">preview_image (sleap.skeleton.Skeleton attribute)</a>
+</li>
       <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.RandomFlipper.probability">probability (sleap.nn.data.augmentation.RandomFlipper attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.outputs.html#sleap.nn.config.outputs.TensorBoardConfig.profile_graph">profile_graph (sleap.nn.config.outputs.TensorBoardConfig attribute)</a>
@@ -3956,6 +4027,8 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.read">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.read">(sleap.io.format.nix.NixAdaptor class method)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.read">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor class method)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.read">(sleap.io.format.text.TextAdaptor method)</a>
@@ -4017,8 +4090,12 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.skeleton.html#sleap.skeleton.Skeleton.relabel_nodes">relabel_nodes() (sleap.skeleton.Skeleton method)</a>
 </li>
-      <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove">remove() (sleap.io.dataset.Labels method)</a>
+      <li><a href="api/sleap.instance.html#sleap.instance.InstancesList.remove">remove() (sleap.instance.InstancesList method)</a>
+
+      <ul>
+        <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove">(sleap.io.dataset.Labels method)</a>
 </li>
+      </ul></li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_all_tracks">remove_all_tracks() (sleap.io.dataset.Labels method)</a>
 </li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_empty_frames">remove_empty_frames() (sleap.io.dataset.Labels method)</a>
@@ -4059,6 +4136,8 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_untracked_instances">remove_untracked_instances() (sleap.io.dataset.Labels method)</a>
 </li>
+      <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_unused_tracks">remove_unused_tracks() (sleap.io.dataset.Labels method)</a>
+</li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_user_instances">remove_user_instances() (sleap.io.dataset.Labels method)</a>
 </li>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.remove_video">remove_video() (sleap.io.dataset.Labels method)</a>
@@ -4091,6 +4170,8 @@ title="Open an issue"
         <li><a href="api/sleap.io.video.html#sleap.io.video.SingleImageVideo.reset">(sleap.io.video.SingleImageVideo method)</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.nn.utils.html#sleap.nn.utils.reset_input_layer">reset_input_layer() (in module sleap.nn.utils)</a>
+</li>
       <li><a href="api/sleap.nn.data.dataset_ops.html#sleap.nn.data.dataset_ops.Shuffler.reshuffle_each_iteration">reshuffle_each_iteration (sleap.nn.data.dataset_ops.Shuffler attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.data.html#sleap.nn.config.data.PreprocessingConfig.resize_and_pad_to_target">resize_and_pad_to_target (sleap.nn.config.data.PreprocessingConfig attribute)</a>
@@ -4137,7 +4218,11 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.CentroidCrop.return_crops">return_crops (sleap.nn.inference.CentroidCrop attribute)</a>
 </li>
+      <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpInferenceLayer.return_paf_graph">return_paf_graph (sleap.nn.inference.BottomUpInferenceLayer attribute)</a>
+</li>
       <li><a href="api/sleap.nn.inference.html#sleap.nn.inference.BottomUpInferenceLayer.return_pafs">return_pafs (sleap.nn.inference.BottomUpInferenceLayer attribute)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.Tracker.robust_best_instance">robust_best_instance (sleap.nn.tracking.Tracker attribute)</a>
 </li>
       <li><a href="api/sleap.nn.config.optimization.html#sleap.nn.config.optimization.AugmentationConfig.rotate">rotate (sleap.nn.config.optimization.AugmentationConfig attribute)</a>
 </li>
@@ -4337,11 +4422,17 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.Tracker.similarity_function">similarity_function (sleap.nn.tracking.Tracker attribute)</a>
 </li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.FlowMaxTracker.similarity_function">similarity_function() (sleap.nn.tracking.FlowMaxTracker method)</a>
+</li>
       <li><a href="api/sleap.nn.architectures.hrnet.html#sleap.nn.architectures.hrnet.simple_block">simple_block() (in module sleap.nn.architectures.hrnet)</a>
 </li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.SimpleCandidateMaker">SimpleCandidateMaker (class in sleap.nn.tracking)</a>
 </li>
       <li><a href="api/sleap.nn.architectures.encoder_decoder.html#sleap.nn.architectures.encoder_decoder.SimpleConvBlock">SimpleConvBlock (class in sleap.nn.architectures.encoder_decoder)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.SimpleMaxTracker">SimpleMaxTracker (class in sleap.nn.tracking)</a>
+</li>
+      <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.SimpleMaxTracksCandidateMaker">SimpleMaxTracksCandidateMaker (class in sleap.nn.tracking)</a>
 </li>
       <li><a href="api/sleap.nn.tracking.html#sleap.nn.tracking.SimpleTracker">SimpleTracker (class in sleap.nn.tracking)</a>
 </li>
@@ -4506,6 +4597,13 @@ title="Open an issue"
 </li>
       </ul></li>
       <li>
+    sleap.io.format.csv
+
+      <ul>
+        <li><a href="api/sleap.io.format.csv.html#module-sleap.io.format.csv">module</a>
+</li>
+      </ul></li>
+      <li>
     sleap.io.format.deeplabcut
 
       <ul>
@@ -4575,6 +4673,15 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.ndx_pose.html#module-sleap.io.format.ndx_pose">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    sleap.io.format.nix
+
+      <ul>
+        <li><a href="api/sleap.io.format.nix.html#module-sleap.io.format.nix">module</a>
+</li>
+      </ul></li>
       <li>
     sleap.io.format.sleap_analysis
 
@@ -4582,8 +4689,6 @@ title="Open an issue"
         <li><a href="api/sleap.io.format.sleap_analysis.html#module-sleap.io.format.sleap_analysis">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     sleap.io.format.text
 
@@ -5235,7 +5340,7 @@ title="Open an issue"
 </li>
       <li><a href="api/sleap.nn.config.training_job.html#sleap.nn.config.training_job.TrainingJobConfig">TrainingJobConfig (class in sleap.nn.config.training_job)</a>
 </li>
-      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.ImgaugAugmenter.transform_dataset">transform_dataset() (sleap.nn.data.augmentation.ImgaugAugmenter method)</a>
+      <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.AlbumentationsAugmenter.transform_dataset">transform_dataset() (sleap.nn.data.augmentation.AlbumentationsAugmenter method)</a>
 
       <ul>
         <li><a href="api/sleap.nn.data.augmentation.html#sleap.nn.data.augmentation.RandomCropper.transform_dataset">(sleap.nn.data.augmentation.RandomCropper method)</a>
@@ -5561,16 +5666,18 @@ title="Open an issue"
       </ul></li>
       <li><a href="api/sleap.nn.data.providers.html#sleap.nn.data.providers.LabelsReader.with_track_only">with_track_only (sleap.nn.data.providers.LabelsReader attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.io.dataset.html#sleap.io.dataset.Labels.with_user_labels_only">with_user_labels_only() (sleap.io.dataset.Labels method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/sleap.io.format.main.html#sleap.io.format.main.write">write() (in module sleap.io.format.main)</a>
 
       <ul>
         <li><a href="api/sleap.io.format.adaptor.html#sleap.io.format.adaptor.Adaptor.write">(sleap.io.format.adaptor.Adaptor method)</a>
 </li>
         <li><a href="api/sleap.io.format.alphatracker.html#sleap.io.format.alphatracker.AlphaTrackerAdaptor.write">(sleap.io.format.alphatracker.AlphaTrackerAdaptor method)</a>
+</li>
+        <li><a href="api/sleap.io.format.csv.html#sleap.io.format.csv.CSVAdaptor.write">(sleap.io.format.csv.CSVAdaptor class method)</a>
 </li>
         <li><a href="api/sleap.io.format.genericjson.html#sleap.io.format.genericjson.GenericJsonAdaptor.write">(sleap.io.format.genericjson.GenericJsonAdaptor method)</a>
 </li>
@@ -5580,11 +5687,15 @@ title="Open an issue"
 </li>
         <li><a href="api/sleap.io.format.ndx_pose.html#sleap.io.format.ndx_pose.NDXPoseAdaptor.write">(sleap.io.format.ndx_pose.NDXPoseAdaptor method)</a>
 </li>
+        <li><a href="api/sleap.io.format.nix.html#sleap.io.format.nix.NixAdaptor.write">(sleap.io.format.nix.NixAdaptor class method)</a>
+</li>
         <li><a href="api/sleap.io.format.sleap_analysis.html#sleap.io.format.sleap_analysis.SleapAnalysisAdaptor.write">(sleap.io.format.sleap_analysis.SleapAnalysisAdaptor class method)</a>
 </li>
         <li><a href="api/sleap.io.format.text.html#sleap.io.format.text.TextAdaptor.write">(sleap.io.format.text.TextAdaptor method)</a>
 </li>
       </ul></li>
+      <li><a href="api/sleap.info.write_tracking_h5.html#sleap.info.write_tracking_h5.write_csv_file">write_csv_file() (in module sleap.info.write_tracking_h5)</a>
+</li>
       <li><a href="api/sleap.nn.config.outputs.html#sleap.nn.config.outputs.TensorBoardConfig.write_logs">write_logs (sleap.nn.config.outputs.TensorBoardConfig attribute)</a>
 </li>
       <li><a href="api/sleap.info.write_tracking_h5.html#sleap.info.write_tracking_h5.write_occupancy_file">write_occupancy_file() (in module sleap.info.write_tracking_h5)</a>
@@ -5610,36 +5721,73 @@ title="Open an issue"
 
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By SLEAP Developers<br/>
-  
-      &copy; Copyright 2019–2022, Talmo Lab.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By SLEAP Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2019–2024, Talmo Lab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
