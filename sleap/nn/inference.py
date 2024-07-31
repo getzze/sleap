@@ -43,43 +43,44 @@ from typing import Dict, Iterator, List, Optional, Text, Tuple, Union
 
 if sys.version_info >= (3, 8):
     from functools import cached_property
-
 else:  # cached_property is defined only for python >=3.8
     cached_property = property
 
 import attr
 import numpy as np
 import pandas as pd
-import rich.progress
+import rich
 import tensorflow as tf
 import tensorflow_hub as hub
 from rich.pretty import pprint
+
+import sleap
+
+from sleap.nn.config import TrainingJobConfig, DataConfig
+from sleap.nn.data.resizing import SizeMatcher
+from sleap.nn.model import Model
+from sleap.nn.tracking import Tracker
+from sleap.nn.paf_grouping import PAFScorer
+from sleap.nn.data.pipelines import (
+    Batcher,
+    Provider,
+    Pipeline,
+    LabelsReader,
+    VideoReader,
+    Normalizer,
+    Resizer,
+    Prefetcher,
+    InstanceCentroidFinder,
+    KerasModelPredictor,
+)
+from sleap.nn.utils import reset_input_layer
+from sleap.io.dataset import Labels
+from sleap.util import frame_list, make_scoped_dictionary, RateColumn
+from sleap.instance import PredictedInstance, LabeledFrame
+
 from tensorflow.python.framework.convert_to_constants import (
     convert_variables_to_constants_v2,
 )
-
-import sleap
-from sleap.instance import LabeledFrame, PredictedInstance
-from sleap.io.dataset import Labels
-from sleap.nn.config import DataConfig, TrainingJobConfig
-from sleap.nn.data.pipelines import (
-    Batcher,
-    InstanceCentroidFinder,
-    KerasModelPredictor,
-    LabelsReader,
-    Normalizer,
-    Pipeline,
-    Prefetcher,
-    Provider,
-    Resizer,
-    VideoReader,
-)
-from sleap.nn.data.resizing import SizeMatcher
-from sleap.nn.model import Model
-from sleap.nn.paf_grouping import PAFScorer
-from sleap.nn.tracking import Tracker
-from sleap.nn.utils import reset_input_layer
-from sleap.util import RateColumn, frame_list, make_scoped_dictionary
 
 logger = logging.getLogger(__name__)
 
