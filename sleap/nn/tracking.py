@@ -763,6 +763,12 @@ class Tracker(BaseTracker):
 
     last_matches: Optional[FrameMatches] = None
 
+    verbosity: str = attr.ib(
+        validator=attr.validators.in_(["none", "rich", "json"]),
+        default="none",
+    )
+    report_rate: float = 2.0
+
     @property
     def is_valid(self):
         return self.similarity_function is not None
@@ -1498,6 +1504,12 @@ class KalmanTracker(BaseTracker):
     pre_tracked: bool = False
     last_t: int = 0
     last_init_t: int = 0
+
+    verbosity: str = attr.ib(
+        validator=attr.validators.in_(["none", "rich", "json"]),
+        default="none",
+    )
+    report_rate: float = 2.0
 
     @property
     def is_valid(self):
