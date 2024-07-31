@@ -512,6 +512,9 @@ class Predictor(ABC):
         n_total = len(data_provider)
         examples = self.pipeline.make_dataset()
 
+        # Compile loop examples before starting time to improve ETA
+        examples = self.pipeline.make_dataset()
+
         # Loop over data batches with optional progress reporting.
         if self.verbosity == "rich":
             for ex in self._run_batch_rich(examples, n_total=n_total):
