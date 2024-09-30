@@ -1,4 +1,3 @@
-import inspect
 import operator
 import os
 import time
@@ -9,7 +8,7 @@ import pytest
 import sleap
 from sleap.nn.inference import main as inference_cli
 import sleap.nn.tracker.components
-from sleap.io.dataset import Labels, LabeledFrame
+from sleap.io.dataset import Labels
 
 
 similarity_args = [

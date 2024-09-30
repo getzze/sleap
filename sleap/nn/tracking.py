@@ -667,6 +667,7 @@ class BaseTracker(abc.ABC):
     def track(
         self,
         untracked_instances: List[InstanceType],
+        img_hw: Tuple[int],
         img: Optional[np.ndarray] = None,
         t: int = None,
     ):
@@ -1598,6 +1599,7 @@ class KalmanTracker(BaseTracker):
     def track(
         self,
         untracked_instances: List[InstanceType],
+        img_hw: Tuple[int],
         img: Optional[np.ndarray] = None,
         t: int = None,
         **kwargs,
