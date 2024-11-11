@@ -667,12 +667,6 @@ class Tracker(BaseTracker):
     prefer_reassigning_track: bool = False
     allow_reassigning_track: bool = False
 
-    verbosity: str = attr.ib(
-        validator=attr.validators.in_(["none", "rich", "json"]),
-        default="none",
-    )
-    report_rate: float = 2.0
-
     #: Hold frames with matched instances as deque of length `track_window`.
     track_matching_queue: Deque[MatchedFrameInstances] = attr.ib()
 
@@ -1454,12 +1448,6 @@ class KalmanTracker(BaseTracker):
     pre_tracked: bool = False
     last_t: int = 0
     last_init_t: int = 0
-
-    verbosity: str = attr.ib(
-        validator=attr.validators.in_(["none", "rich", "json"]),
-        default="none",
-    )
-    report_rate: float = 2.0
 
     @property
     def is_valid(self):
