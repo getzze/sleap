@@ -438,6 +438,7 @@ class BaseTracker(abc.ABC):
 
     verbosity: str
     report_rate: float
+    track_only_predicted: bool
 
     @property
     def is_valid(self):
@@ -448,9 +449,9 @@ class BaseTracker(abc.ABC):
         """Time between progress reports in seconds."""
         return 1.0 / self.report_rate
 
-    def run_step(self, lf: LabeledFrame, *, only_predicted: bool = True) -> LabeledFrame:
+    def run_step(self, lf: LabeledFrame) -> LabeledFrame:
         # Use only the predicted instances
-        if only_predicted:
+        if self.track_only_predicted:
             instances = [inst for inst in lf.instances if isinstance(inst, PredictedInstance)]
         else:  # pragma: no cover
             instances = lf.instances
@@ -684,6 +685,7 @@ class Tracker(BaseTracker):
         default="none",
     )
     report_rate: float = 2.0
+    track_only_predicted: bool = True
 
     @property
     def is_valid(self):
@@ -1115,8 +1117,8 @@ class Tracker(BaseTracker):
         )
         options.append(option)
 
-        option = dict(name="pre_cull_merge_instances", default=False)
-        option["type"] = bool
+        option = dict(name="pre_cull_merge_instances", default=0)
+        option["type"] = int
         option["help"] = (
             "If True, allow merging instances with non-overlapping visible nodes "
             "to create new instances *before* tracking."
@@ -1178,15 +1180,15 @@ class Tracker(BaseTracker):
         option["help"] = "Minimum number of instance points for spawning new track"
         options.append(option)
 
-        option = dict(name="allow_reassigning_track", default=False)
-        option["type"] = bool
+        option = dict(name="allow_reassigning_track", default=0)
+        option["type"] = int
         option[
             "help"
         ] = "Allow assigning existing but unused track to unmatched instances."
         options.append(option)
 
-        option = dict(name="prefer_reassigning_track", default=False)
-        option["type"] = bool
+        option = dict(name="prefer_reassigning_track", default=0)
+        option["type"] = int
         option["help"] = (
             "Try first to reassign to an existing track before trying to "
             "spawn a new track with unmatched instances."
@@ -1454,6 +1456,7 @@ class KalmanTracker(BaseTracker):
         default="none",
     )
     report_rate: float = 2.0
+    track_only_predicted: bool = True
 
     @property
     def is_valid(self):

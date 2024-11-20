@@ -376,7 +376,7 @@ def cull_frame_instances(
 
     # Merge instances
     if merge_instances:
-        logger.info("Merging instances with penalty: %f", merging_penalty)
+        logger.debug("Merging instances with penalty: %f", merging_penalty)
         merged_instances = create_merged_instances(
             instances_list, penalty=merging_penalty
         )
