@@ -26,6 +26,7 @@ from sleap.nn.tracker.components import (
     cull_frame_instances,
     connect_single_track_breaks,
     InstanceType,
+    PredictedInstance,
     FrameMatches,
     Match,
 )
@@ -447,12 +448,18 @@ class BaseTracker(abc.ABC):
         """Time between progress reports in seconds."""
         return 1.0 / self.report_rate
 
-    def run_step(self, lf: LabeledFrame) -> LabeledFrame:
+    def run_step(self, lf: LabeledFrame, *, only_predicted: bool = True) -> LabeledFrame:
+        # Use only the predicted instances
+        if only_predicted:
+            instances = [inst for inst in lf.instances if isinstance(inst, PredictedInstance)]
+        else:  # pragma: no cover
+            instances = lf.instances
+
         # Clear the tracks
-        for inst in lf.instances:
+        for inst in instances:
             inst.track = None
 
-        track_args = dict(untracked_instances=lf.instances, t=lf.frame_idx)
+        track_args = dict(untracked_instances=instances, t=lf.frame_idx)
         if self.uses_image:
             track_args["img"] = lf.video[lf.frame_idx]
         else:
@@ -795,18 +802,22 @@ class Tracker(BaseTracker):
         inst_list = []
         for match in matches:
             # Assign to track and save.
-            inst_list.append(
-                attr.evolve(
-                    match.instance,
-                    track=match.track,
-                    tracking_score=match.score,
-                )
-            )
+            params = {
+                "track": match.track,
+                "tracking_score": match.score,
+            }
+            if isinstance(match.instance, PredictedInstance):
+                new_instance = attr.evolve(match.instance, **params)
+            else:
+                # Instance attributes + missing score + evolved values
+                full_params = {**attrs.asdict(match.instance), "score": 1, "tracking_score": 0, **params}
+                new_instance = PredictedInstance(**full_params)
+            inst_list.append(new_instance)
             # Keep the last instance for this track
             self.found_tracks[match.track] = t
         return inst_list
 
-    def spawn_new_track(self, inst: InstanceType, t: int) -> Optional[InstanceType]:
+    def spawn_new_track(self, inst: PredictedInstance, t: int) -> Optional[PredictedInstance]:
         """Try spawning a new track for instance."""
         if self.max_tracks >= 0 and len(self.found_tracks) >= self.max_tracks:
             return None
@@ -823,10 +834,10 @@ class Tracker(BaseTracker):
 
     def assign_to_track(
         self,
-        inst: InstanceType,
+        inst: PredictedInstance,
         t: int,
         not_assigned_tracks: List[Track],
-    ) -> Optional[InstanceType]:
+    ) -> Optional[PredictedInstance]:
         """Try assigning instance to a track from a candidate list (best last).
 
         `not_assigned_tracks` will be modified.
@@ -848,6 +859,12 @@ class Tracker(BaseTracker):
         t: int,
     ) -> List[InstanceType]:
         """Assign an existing track or spawn a new track for untracked instances."""
+        # Convert to PredictedInstance, with a score of 1 for user-defined Instance
+        unmatched_instances: List[PredictedInstance] = [
+            inst if isinstance(inst, PredictedInstance) else PredictedInstance(**{**attrs.asdict(inst), "score": 1})
+            for inst in unmatched_instances
+        ]
+        
         # Early return
         if len(unmatched_instances) == 0:
             return []
