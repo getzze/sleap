@@ -29,6 +29,7 @@ from sleap.nn.tracker.components import (
     cull_frame_instances,
     connect_single_track_breaks,
     InstanceType,
+    PredictedInstance,
     FrameMatches,
     Match,
 )
@@ -462,11 +463,16 @@ class BaseTracker(abc.ABC):
         return 1.0 / self.report_rate
 
     def run_step(self, lf: LabeledFrame) -> LabeledFrame:
+        # Use only the predicted instances
+        instances = [
+            inst for inst in lf.instances if isinstance(inst, PredictedInstance)
+        ]
+
         # Clear the tracks
-        for inst in lf.instances:
+        for inst in instances:
             inst.track = None
 
-        track_args = dict(untracked_instances=lf.instances, t=lf.frame_idx)
+        track_args = dict(untracked_instances=instances, t=lf.frame_idx)
         if self.uses_image:
             track_args["img"] = lf.video[lf.frame_idx]
         else:
