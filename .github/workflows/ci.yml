@@ -67,9 +67,10 @@ jobs:
         with:
           miniforge-version: latest
           conda-solver: "libmamba"
+          mamba-version: "1.5"
           environment-file: ${{ matrix.env_file }}
           activate-environment: sleap_ci
-      
+
       # Print environment info
       - name: Print environment info
         shell: bash -l {0}
@@ -78,7 +79,7 @@ jobs:
           conda info
           conda list
           pip freeze
-      
+
       # Test environment
       - name: Test with pytest
         shell: bash -l {0}
